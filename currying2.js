@@ -1,15 +1,13 @@
-let totalSum =0
-
 function sum(...arg){
-  for(let i=0;i<arg.length;i++){
-  totalSum+= arg[i]
-}
+const arr = arg
+const totalSum = arr.reduce((acc,curr)=>
+acc+=curr
+,0)
 return function(b){
-  return function(c){
-    return totalSum +b+c
+  return function (c){
+  return totalSum + b +c
   }
 }
 }
 
-const ans = sum(1,2,3,5,6)(1)(2)
-console.log(ans)
+console.log(sum(1,2,30,4)(8)(9))
